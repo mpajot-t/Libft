@@ -6,12 +6,11 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:47:00 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/05 13:28:28 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/06 09:17:12 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {

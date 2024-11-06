@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:29:24 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/05 14:44:19 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:09:13 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ size_t	ft_strlen(const char *c)
 	return (i);
 }
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t src_len;
-	
+	size_t	i;
+	size_t	src_len;
+
 	i = 0;
 	src_len = ft_strlen(src);
 	if (size == 0)
@@ -40,7 +40,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i+1] = '\0';
+	dst[i + 1] = '\0';
 	return (src_len);
 }
 /*
