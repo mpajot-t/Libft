@@ -6,11 +6,11 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:57:22 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/05 10:48:53 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:47:56 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

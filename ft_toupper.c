@@ -6,13 +6,15 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:17:35 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/06 11:11:55 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:01:51 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	return (c - 32);
+	if (c >= 'a' && 'z' >= c)
+		return (c - 32);
+	return (c);
 }
 /*
 #include <stdio.h>

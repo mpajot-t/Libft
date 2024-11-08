@@ -6,13 +6,15 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:17:31 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/06 11:11:51 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:01:56 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	return (c + 32);
+	if (c >= 'A' && 'Z' >= c)
+		return (c + 32);
+	return (c);
 }
 /*
 #include <stdio.h>

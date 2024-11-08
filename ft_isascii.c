@@ -6,11 +6,11 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:06:30 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/05 10:49:21 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:47:46 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_isascii(char c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

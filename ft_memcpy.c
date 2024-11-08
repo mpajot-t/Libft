@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:23:28 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/05 13:30:46 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:06:07 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 
 	i = 0;
-	d = (char *)dest;
-	s = (const char *)src;
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
 	while (i < n)
 	{
 		((char *)dest)[i] = ((char *)src)[i];
