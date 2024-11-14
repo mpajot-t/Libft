@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:43:44 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/08 10:10:15 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/12 09:16:35 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (s1[end] && ft_find_set(s1[end], set))
 		end--;
-	ns = malloc((end - start + 1) * sizeof(char));
+	if (end < start)
+		end = start - 1;
+	ns = malloc((end - start + 2) * sizeof(char));
 	if (!ns)
 		return (NULL);
 	while (start <= end)
@@ -56,9 +58,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 int main()
 {
-	char a[] = "siubabhkjgsiu";
-	char b[] = "siu";
+	char a[] = "tripouille   xxx";
+	char b[] = "x";
 	char *res = ft_strtrim(a,b);
-	printf("Retour : %s\n",res);
+	printf("Retour : %sd\n",res);
 }
 */

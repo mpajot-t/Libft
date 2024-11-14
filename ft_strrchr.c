@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 09:42:15 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/08 14:48:31 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:11:06 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
-	unsigned char *ns;
-	unsigned char nc;
-	
+	int				len;
+	unsigned char	*ns;
+	unsigned char	nc;
+
 	ns = (unsigned char *)s;
 	nc = (unsigned char)c;
 	len = ft_strlen((s));

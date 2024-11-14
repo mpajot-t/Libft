@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:04:18 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/08 10:13:22 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:12:10 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ static int	ft_wordcount(char const *s, char c)
 	words = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c)
+			i++;
+		if (s[i])
 			words++;
-		i++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	return (words + 1);
+	return (words);
 }
 
 static void	fill(char *tab, char const *s, char c)
@@ -51,6 +54,8 @@ static int	set_malloc(char **tab, char const *s, char c)
 	j = 0;
 	while (s[i])
 	{
+		while (s[i] == c)
+			i++;
 		count = 0;
 		while (s[i + count] && s[i + count] != c)
 			count++;
@@ -61,10 +66,8 @@ static int	set_malloc(char **tab, char const *s, char c)
 				return (1);
 			fill(tab[j], (s + i), c);
 			j++;
-			i = count + i;
 		}
-		else
-			i++;
+		i += count;
 	}
 	tab[j] = NULL;
 	return (0);
@@ -81,7 +84,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	if (set_malloc(tab, s, c) == 1)
 	{
-		while (i < ft_wordcount(s, c))
+		while (tab[i])
 		{
 			free(tab[i]);
 			i++;
@@ -96,7 +99,7 @@ char	**ft_split(char const *s, char c)
 int main()
 {
 	int i = 0;
-	char a[] = "mem_tab_lelel_dde";
+	char a[] = "_mem_tab_lelel_dde";
 	char div = '_';
 	char **tab = ft_split(a,div);
 	while (tab[i])

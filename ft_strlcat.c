@@ -6,21 +6,11 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:33:10 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/08 14:19:29 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/12 09:14:20 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *c)
-{
-	size_t	i;
-
-	i = 0;
-	while (c[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -31,8 +21,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	if (size < dst_len)
-		return (dst_len + src_len);
+	if (size == 0)
+		return (src_len);
+	if (size <= dst_len)
+		return (size + src_len);
 	while (i < size - dst_len - 1 && src[i] != '\0')
 	{
 		dst[dst_len + i] = src[i];
@@ -45,10 +37,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 #include <stdio.h>
 int main()
 {
-	char a[20] = "hello";
-	char b[] = "Bonjour";
+	char a[20] = "AAAA";
+	char b[] = "BBBBBBBBBBBBB";
 
-	size_t taille = ft_strlcat(a, b, 10);
+	size_t taille = ft_strlcat(a, b, 3);
 	printf("Resultat : %s\n", a);
 	printf("Taille : %zu\n", taille);
 }

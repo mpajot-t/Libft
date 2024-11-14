@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 10:41:56 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/12 14:19:34 by mpajot-t         ###   ########.fr       */
+/*   Created: 2024/11/13 11:36:59 by mpajot-t          #+#    #+#             */
+/*   Updated: 2024/11/14 09:50:55 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (n == -2147483648)
+	t_list	*new;
+	t_list	*newelem;
+	void	*content;
+
+	if (!f || !lst)
+		return (NULL);
+	new = NULL;
+	while (lst != NULL)
 	{
-		write (fd, "-2147483648", 11);
-		return ;
+		content = f(lst->content);
+		newelem = ft_lstnew(content);
+		if (!newelem)
+		{
+			del(content);
+			ft_lstclear(&new, (*del));
+			return (NULL);
+		}
+		ft_lstadd_back(&new, newelem);
+		lst = lst->next;
 	}
-	if (n == 0)
-	{
-		write (fd, "0", 1);
-		return ;
-	}
-	if (n < 0)
-	{
-		write (fd, "-", 1);
-		n = -n;
-	}
-	if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar_fd (n + '0', fd);
+	return (new);
 }

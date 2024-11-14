@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:01:58 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/06 14:12:08 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/10 09:47:49 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t'
 		|| nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
 		i++;
-	while (nptr[i] == '-' || nptr[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 			signe *= -1;

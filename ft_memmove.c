@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:23:52 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/08 11:37:05 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:07:09 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
-	if (d <= s)
+	if (!dest && !src)
+		return (dest);
+	if (dest <= src)
 	{
 		while (i < n)
 		{
@@ -32,11 +34,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		i = n;
-		while (i > 0)
-		{
-			d[i - 1] = s[i - 1];
-			i--;
-		}
+		while (i-- > 0)
+			d[i] = s[i];
 	}
 	return (dest);
 }

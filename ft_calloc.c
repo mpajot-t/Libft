@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:13:02 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/07 09:17:47 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/10 10:09:08 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	total;
 	void	*ptr;
 
-	total = nmemb * size;
-	if (nmemb == 0 || size == 0)
+	if (nmemb > 0 && size > 0 && nmemb > SIZE_MAX / size)
 		return (NULL);
-	ptr = malloc(total);
+	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, total);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }

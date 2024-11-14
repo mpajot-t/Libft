@@ -6,7 +6,7 @@
 /*   By: mpajot-t <mpajot-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:35:23 by mpajot-t          #+#    #+#             */
-/*   Updated: 2024/11/08 14:50:56 by mpajot-t         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:16:26 by mpajot-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	*ns;
+	unsigned char	nc;
 
 	i = 0;
-	unsigned char *ns;
-	unsigned char nc;
 	ns = (unsigned char *)s;
 	nc = (unsigned char)c;
-	while (ns[i] || c == '\0')
+	while (ns[i])
 	{
 		if (nc == ns[i])
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (nc == '\0')
+		return ((char *)&s[i]);
 	return (NULL);
 }
 /*
